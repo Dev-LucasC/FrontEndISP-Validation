@@ -1,7 +1,7 @@
+import { menuItems } from "../../utils/menuItems"
 
 
 const HeaderComponent = () => {
-  let menuItems: string[] = ['HOME','QUEM SOMOS','PROJETOS','GALERIA',' CONTATO']
 
   return (
     <nav>
