@@ -1,3 +1,3 @@
-const menuItems: string[] = ['HOME','QUEM SOMOS','PROJETOS','GALERIA',' CONTATO']
+const menuItems: string[] = ['HOME','QUEM SOMOS','PROJETOS','GALERIA','CONTATO']
 
 export {menuItems}
