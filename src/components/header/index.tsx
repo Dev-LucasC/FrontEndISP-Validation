@@ -1,7 +1,7 @@
 
 
 const HeaderComponent = () => {
-  let menuItems = ['HOME','QUEM SOMOS','PROJETOS','GALERIA',' CONTATO']
+  let menuItems: string[] = ['HOME','QUEM SOMOS','PROJETOS','GALERIA',' CONTATO']
 
   return (
     <nav>
