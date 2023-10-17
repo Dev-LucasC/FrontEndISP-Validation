@@ -1,24 +1,25 @@
 
 
 const HeaderComponent = () => {
-  let menuItems = [
-    <img src="" alt="Logo" />,
-    'HOME',
-    'QUEM SOMOS',
-    'PROJETOS',
-    'GALERIA',
-    'CONTATO',
-    <button className='bg-orange-500 text-white mr-8 p-1 rounded-md'>
-      FAZER DOAÇÃO
-    </button>
-  ]
+  let menuItems = ['HOME','QUEM SOMOS','PROJETOS','GALERIA',' CONTATO']
 
   return (
     <nav>
       <ul className='w-full my-3 flex justify-between'>
+        <li>
+          <img src="" alt="Logo ISP" />
+        </li>
+        <li className="flex flex-row">
         {menuItems.map((item) => (
-          <li className="font-medium border-r-2 border-gray-200 border-spacing-x-2">{item}</li>
+          <p className="border-r-2 mr-4 pr-4 border-r-gray-200 border-spacing-4 text-sm font-medium text-gray-600">
+            {item}
+          </p>
         ))}
+          <button className='bg-orange-500 shadow-xl text-white text-sm capitalize w-36 mx-4 rounded-md'>
+            FAZER DOAÇÃO
+          </button>
+        </li>
+        <li/>
       </ul>
     </nav>
   )
