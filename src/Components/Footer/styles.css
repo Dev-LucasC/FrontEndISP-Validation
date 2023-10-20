@@ -1,0 +1,15 @@
+.footer-container {
+    background-image: linear-gradient(180deg, #63B2BB, #E07D2594);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.icons {
+    transition: .3s ease-in-out;
+}
+
+.icons:hover {
+    transform: scale(1.3);
+    color: #f6993f;
+}

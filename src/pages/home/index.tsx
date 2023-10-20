@@ -1,8 +1,11 @@
-
+import { Footer } from '../../components/footer'
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <div>
+      <p className="font-bold">Home Page</p>
+      <Footer />
+    </div>
   )
 }
 
