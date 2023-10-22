@@ -1,6 +1,6 @@
 import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom'
 import './App.css'
-import HeaderComponent from './components/header'
+import HeaderComponent from './components/Header'
 import HomePage from './pages/home'
 import WhoWeArePage from './pages/whoWeAre'
 import ProjectsPage from './pages/projects'
@@ -13,7 +13,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <HeaderComponent >
+      <HeaderComponent>
         <Routes>
           <Route path='/' element={<LoginPage/>}/>
           <Route path='/home' element={<HomePage/>}/>
