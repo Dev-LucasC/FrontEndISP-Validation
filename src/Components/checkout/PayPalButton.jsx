@@ -1,19 +1,32 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 function PayPalButton() {
+  const [amount, setAmount] = useState(0);
   const buttonContainerRef = useRef(null);
 
   useEffect(() => {
-    // Verifica se o botão PayPal já foi renderizado
     if (buttonContainerRef.current.childNodes.length === 0) {
-      // Configuração do botão PayPal
       // eslint-disable-next-line no-undef
-      paypal.Buttons().render(buttonContainerRef.current);
+      paypal.Buttons({
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{
+              amount: {
+                value: amount,
+                currency_code: 'BRL'
+              }
+            }]
+          });
+        }
+      }).render(buttonContainerRef.current);
     }
-  }, []);
+  }, [amount]);
 
   return (
-    <div ref={buttonContainerRef}></div>
+    <div>
+      <input type="number" value={amount} onChange={e => setAmount(e.target.value)} />
+      <div ref={buttonContainerRef}></div>
+    </div>
   );
 }
 
