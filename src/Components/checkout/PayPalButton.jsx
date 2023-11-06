@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 function PayPalButton() {
-  const [buttonsRendered, setButtonsRendered] = useState(false);
+  const buttonContainerRef = useRef(null);
 
   useEffect(() => {
-    if (!buttonsRendered) {
+    // Verifica se o botão PayPal já foi renderizado
+    if (buttonContainerRef.current.childNodes.length === 0) {
       // Configuração do botão PayPal
       // eslint-disable-next-line no-undef
-      paypal.Buttons().render('#paypal-button-container');
-      setButtonsRendered(true);
+      paypal.Buttons().render(buttonContainerRef.current);
     }
-  }, [buttonsRendered]);
+  }, []);
 
   return (
-    <div id="paypal-button-container"></div>
+    <div ref={buttonContainerRef}></div>
   );
 }
 
